@@ -39,7 +39,7 @@ Nmap done: 1 IP address (1 host up) scanned in 2.12 seconds
 
 ### Задание 2 — Определение NS и MX
 
-#### определить NS
+1) определить NS
 
 ```bash
 dig @127.0.0.1 -p 5300 corp.local NS
@@ -65,7 +65,7 @@ ns1.corp.local. 86400 IN A 192.168.100.10
 
 Ответ: NS сервер имеет DNS ns1.corp.local и его адрес 192.168.100.10
 
-#### определить MX
+2) определить MX
 
 ```bash
 dig @127.0.0.1 -p 5300 corp.local MX
@@ -73,7 +73,7 @@ dig @127.0.0.1 -p 5300 corp.local MX
 
 Ответ: mail.corp.local. 86400 IN A 192.168.100.30
 
-# Задание 3 — Поиск поддоменов (ручной)
+### Задание 3 — Поиск поддоменов (ручной)
 
 ```bash
 for dns in www mail dev vpn jira git; do dig @127.0.0.1 -p 5300 ${dns}.corp.local; done
@@ -90,7 +90,7 @@ vpn.corp.local. 86400 IN A 192.168.100.50
 
 ### Задание 4 — Получение TXT-записей
 
-#### Запрос TXT
+1) Запрос TXT
 
 ```bash
 dig @127.0.0.1 -p 5300 corp.local TXT
@@ -98,7 +98,7 @@ dig @127.0.0.1 -p 5300 corp.local TXT
 
 Ответ: corp.local. 86400 IN TXT     "v=spf1 mx -all"
 
-#### Дополнительно
+2) Дополнительно
 
 ```bash
 dig @127.0.0.1 -p 5300 dev.corp.local TXT
