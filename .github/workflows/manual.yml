@@ -63,3 +63,11 @@ jobs:
           subject-name: index.docker.io/bykva/sirella
           subject-digest: ${{ steps.push.outputs.digest }}
           push-to-registry: true
+
+      - name: Docker Hub Description
+        uses: peter-evans/dockerhub-description@v4
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+          repository: bykva/sirella
+          readme-filepath: ./README.md

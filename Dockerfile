@@ -1,5 +1,5 @@
 FROM python:3.13.12-slim-trixie
-LABEL authors="a.kondratev"
+LABEL authors="info@bykvaadm.ru"
 
 ENV DEBIAN_FRONTEND=noninteractive
 
