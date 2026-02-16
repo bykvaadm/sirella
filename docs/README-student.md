@@ -10,7 +10,7 @@
 
 **start:**
 
-docker run --name sirella --rm -p 5300:53/udp -p 5300:53/tcp -p 43:43 -p 8080:8080 -d bykva/sirella:latest
+docker run --name sirella --rm -p 5300:53/udp -p 5300:53/tcp -p 43:43 -p 8080:80 -d bykva/sirella:latest
 
 **stop:**
 
@@ -77,6 +77,7 @@ dig @127.0.0.1 -p 5300 corp.local MX
 
 ```bash
 for dns in www mail dev vpn jira git; do dig @127.0.0.1 -p 5300 ${dns}.corp.local; done
+for dns in www mail dev vpn jira git; do dig +noall +answer @127.0.0.1 -p 5300 ${dns}.corp.local; done
 ```
 
 Ответ:
@@ -181,7 +182,7 @@ whois -h 127.0.0.1 corp.local
 4) scan website with wordlist
 
   ```bash
-  echo -e "portal\nhr\nfiles\n\.git\nstaging\nbackup" >wordlist.txt
+  echo -e "portal\nhr\nfiles\n.git\nstaging\nbackup" > wordlist.txt
   docker run --rm -it --network=host -v ./wordlist.txt:/wordlist.txt ghcr.io/oj/gobuster:latest \
     dir -u http://127.0.0.1:8080 -w /wordlist.txt
   ```
