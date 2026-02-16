@@ -3,7 +3,8 @@
 ## Prerequisites: Docker and Docker Compose.
 
 * If you are using Docker Desktop, both of these should be already installed.
-* If you prefer Docker Engine on Linux, make sure to follow their [installation guide](https://docs.docker.com/engine/install/#server).
+* If you prefer Docker Engine on Linux, make sure to follow
+  their [installation guide](https://docs.docker.com/engine/install/#server).
 
 ## Start | Stop
 
@@ -171,7 +172,22 @@ whois -h 127.0.0.1 corp.local
 
 ### Задание 9 - брутфорс найденного сайта и выкачивание git
 
-- брутим dev.corp.local:8080
-- находим /.git
-- выкачиваем гит
-- находим пароль
+1) open 127.0.0.1:8080 - find data in page source
+2) find /robots.txt
+3) check /dev_no_dict_IDDQD/ which you learned from robots.txt
+4) scan website with wordlist
+   echo -e "portal\nhr\nfiles\n\.git\nstaging\nbackup" > wordlist.txt
+   docker run --rm -it --network=host -v ./wordlist.txt:/wordlist.txt ghcr.io/oj/gobuster:latest dir
+   -u http://127.0.0.1:8080 -w /wordlist.txt
+
+```text
+Starting gobuster in directory enumeration mode
+===============================================================
+.git                 (Status: 301) [Size: 0] [--> /.git/]
+backup               (Status: 301) [Size: 0] [--> /backup/]
+Progress: 6 / 6 (100.00%)
+```
+
+5) check /backup/ which you learned from gobuster
+6) use some kind of [git-dumper](https://github.com/arthaud/git-dumper) to dump http://127.0.0.1:8080/.git
+

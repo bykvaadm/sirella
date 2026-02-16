@@ -4,13 +4,16 @@ LABEL authors="info@bykvaadm.ru"
 ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt update && \
-    apt install -y bind9 bind9utils bind9-dnsutils nano procps && \
+    apt install -y bind9 bind9utils bind9-dnsutils nano procps supervisor && \
     rm -rf /var/lib/apt/lists/* && \
     mkdir -p /etc/bind/zones
 
 COPY app/bind/named.conf /etc/bind/named.conf
 COPY app/bind/zones/ /etc/bind/zones/
 COPY app/whois/whois-server.py /
-COPY init.sh /
+COPY app/web/ /app/web/
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-CMD ["/init.sh"]
+RUN mv /app/web/www/.git-lab /app/web/www/.git
+
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"]

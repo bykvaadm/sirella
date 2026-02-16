@@ -1,0 +1,4 @@
+0000000000000000000000000000000000000000 38b653c689abb58b300e95087e0e103041b990a1 Kondratev Alexander <a.kondratev@bi.zone> 1771245572 +0300	commit (initial): initial commit
+38b653c689abb58b300e95087e0e103041b990a1 fc06d1f4f3f136a8cd38b56f9788a7dbf4519886 Kondratev Alexander <a.kondratev@bi.zone> 1771245655 +0300	commit: add robots.txt
+fc06d1f4f3f136a8cd38b56f9788a7dbf4519886 8860ffe0fe3f5080297666497d4e85ad7a3ed547 Kondratev Alexander <a.kondratev@bi.zone> 1771245721 +0300	commit: migrate to php
+8860ffe0fe3f5080297666497d4e85ad7a3ed547 bfb1623292d4d859ebc9852c5749a4ca6ee218cd Kondratev Alexander <a.kondratev@bi.zone> 1771245736 +0300	revert: Revert "migrate to php"

@@ -1,0 +1,16 @@
+Revert "migrate to php"
+
+This reverts commit 8860ffe0fe3f5080297666497d4e85ad7a3ed547.
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+# Changes to be committed:
+#	new file:   index.html
+#	deleted:    ~index.php
+#
+# Untracked files:
+#	backup/
+#	dev_no_dict_IDDQD/
+#
