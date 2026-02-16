@@ -107,8 +107,11 @@ dig @127.0.0.1 -p 5300 vpn.corp.local TXT
 ```
 
 Ответ:
+```text
 dev.corp.local. 86400 IN TXT     "Jira running on dev.corp.local:8080"
 vpn.corp.local. 86400 IN TXT     "VPN-PSK: Winter2024!"
+
+```
 
 ### Задание 5 — Проверка возможности zone transfer
 
@@ -176,9 +179,12 @@ whois -h 127.0.0.1 corp.local
 2) find /robots.txt
 3) check /dev_no_dict_IDDQD/ which you learned from robots.txt
 4) scan website with wordlist
-   echo -e "portal\nhr\nfiles\n\.git\nstaging\nbackup" > wordlist.txt
-   docker run --rm -it --network=host -v ./wordlist.txt:/wordlist.txt ghcr.io/oj/gobuster:latest dir
-   -u http://127.0.0.1:8080 -w /wordlist.txt
+
+  ```bash
+  echo -e "portal\nhr\nfiles\n\.git\nstaging\nbackup" >wordlist.txt
+  docker run --rm -it --network=host -v ./wordlist.txt:/wordlist.txt ghcr.io/oj/gobuster:latest \
+    dir -u http://127.0.0.1:8080 -w /wordlist.txt
+  ```
 
 ```text
 Starting gobuster in directory enumeration mode
