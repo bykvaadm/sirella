@@ -21,7 +21,7 @@ docker kill sirella
 ### Задание 1 — Проверка доступности DNS
 
 ```bash
-nmap -sU -p 5300 127.0.0.1
+sudo nmap -sU -p 5300 127.0.0.1
 ```
 
 пример вывода:
