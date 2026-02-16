@@ -1,0 +1,21 @@
+$TTL 86400
+@   IN  SOA ns1.internal.local. admin.internal.local. (
+        2024021501
+        3600
+        1800
+        604800
+        86400 )
+
+    IN  NS  ns1.internal.local.
+
+ns1         IN  A   192.168.200.10
+
+portal      IN  A   192.168.200.20
+hr          IN  A   192.168.200.30
+files       IN  A   192.168.200.40
+git         IN  A   192.168.200.50
+staging     IN  A   192.168.200.60
+SSsssSSSsssuperSECRET IN  A   192.168.200.123
+
+; Небольшая подсказка
+portal      IN  TXT "Internal portal v1.2"

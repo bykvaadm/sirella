@@ -1,0 +1,39 @@
+$TTL 86400
+@   IN  SOA ns1.corp.local. admin.corp.local. (
+        2024021502 ; Serial (увеличили!)
+        3600
+        1800
+        604800
+        86400 )
+
+    IN  NS  ns1.corp.local.
+
+; DNS сервер
+ns1         IN  A   192.168.100.10
+
+; Основные сервисы
+www         IN  A   192.168.100.20
+mail        IN  A   192.168.100.30
+dev         IN  A   192.168.100.40
+vpn         IN  A   192.168.100.50
+test-old    IN  A   192.168.100.60
+
+; Почта
+@           IN  MX  10 mail.corp.local.
+
+; -------- TXT записи --------
+
+; SPF
+@           IN  TXT "v=spf1 mx -all"
+
+; Версия инфраструктуры (нечаянная утечка)
+dev         IN  TXT "Jira running on dev.corp.local:8080"
+
+; Главная утечка (можно усложнить)
+vpn         IN  TXT "VPN-PSK: Winter2024!"
+
+; Скрытая подсказка для продвинутых
+backup      IN  TXT "Old backup server at 192.168.100.70"
+
+; --- СКРЫТЫЙ ХОСТ ---
+finance-db      IN  A   192.168.100.77

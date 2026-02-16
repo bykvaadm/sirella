@@ -1,0 +1,16 @@
+$TTL 86400
+@   IN  SOA ns1.internal.local. admin.internal.local. (
+        2024021501
+        3600
+        1800
+        604800
+        86400 )
+
+    IN  NS  ns1.internal.local.
+
+20  IN  PTR portal.internal.local.
+30  IN  PTR hr.internal.local.
+40  IN  PTR files.internal.local.
+50  IN  PTR git.internal.local.
+123  IN  PTR SSsssSSSsssuperSECRET.internal.local
+
