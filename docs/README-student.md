@@ -130,8 +130,7 @@ finance-db.corp.local. 86400 IN A 192.168.100.77
 
 ```bash
 echo -e "portal\nhr\nfiles\ngit\nstaging\nwordlist.txt" > wordlist.txt
-docker run --rm -it --network=host -v ./wordlist.txt:/wordlist.txt ghcr.io/oj/gobuster:latest dns -do internal.local -w
-/wordlist.txt --resolver 127.0.0.1:5300
+docker run --rm -it --network=host -v ./wordlist.txt:/wordlist.txt ghcr.io/oj/gobuster:latest dns -do internal.local -w /wordlist.txt --resolver 127.0.0.1:5300
 ```
 
 Ответ:
