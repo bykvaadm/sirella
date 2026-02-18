@@ -1,10 +1,13 @@
 # Simple Recon Local lab
 
-## Prerequisites: Docker and Docker Compose.
+## Prerequisites: Docker and some tools
 
-* If you are using Docker Desktop, both of these should be already installed.
-* If you prefer Docker Engine on Linux, make sure to follow
-  their [installation guide](https://docs.docker.com/engine/install/#server).
+* [docker installation guide](https://docs.docker.com/engine/install)
+* dig
+* whois
+* nmap
+* curl
+* [git-dumper](https://github.com/arthaud/git-dumper)
 
 ## Start | Stop
 
