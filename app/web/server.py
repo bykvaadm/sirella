@@ -8,6 +8,7 @@ PORT = 80
 class CustomHandler(http.server.SimpleHTTPRequestHandler):
     def end_headers(self):
         self.send_header("Server", "Apache/2.4.49 (Ubuntu)")
+        self.send_header("Content-Type", "text/html; charset=utf-8")
         super().end_headers()
 
 Handler = CustomHandler
